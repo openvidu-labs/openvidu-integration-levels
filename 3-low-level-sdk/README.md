@@ -45,6 +45,6 @@ Flutter, React Native and Unity.
 
 ## Going further
 
-- [Client SDK reference](https://openvidu.io/latest/docs/reference/client-sdk.html) — the model every SDK shares.
+- [Client SDK reference](https://openvidu.io/latest/docs/reference/client-sdk/) — the model every SDK shares.
 - [Application client tutorials](https://openvidu.io/latest/docs/tutorials/application-client/) — JavaScript, React, Angular, Vue, Electron, Ionic, Android and iOS.
 - [Application server tutorials](https://openvidu.io/latest/docs/tutorials/application-server/) — the token endpoint in nine languages.

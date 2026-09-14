@@ -2,7 +2,7 @@
 
 A support desk where the agent hits **Start call** and a complete meeting appears inside the
 page. All of the meeting UI, from the prejoin screen to chat and screen sharing, comes from
-[OpenVidu Meet Embedded](https://openvidu.io/latest/meet/embedded/intro.html).
+[OpenVidu Meet Embedded](https://openvidu.io/latest/meet/embedded/intro/).
 
 Angular 22 frontend, Node.js backend. See the [root README](../README.md) for how to start
 OpenVidu Local first.
@@ -40,22 +40,28 @@ your own deployment:
 <script src="http://localhost:9080/meet/v1/openvidu-meet.js"></script>
 ```
 
-**[`frontend/src/app/app.ts`](frontend/src/app/app.ts)** puts the meeting on the page. In plain
-HTML this is one tag:
+**[`frontend/src/app/app.html`](frontend/src/app/app.html)** puts the meeting on the page. In plain
+HTML this is one tag; in Angular it is the same tag with bindings:
 
 ```html
-<openvidu-meet room-url="http://localhost:9080/meet/room/ticket_4821-xyz?secret=abc"></openvidu-meet>
+<openvidu-meet
+  #meet
+  [attr.room-url]="current.moderatorUrl"
+  participant-name="Support agent"
+  (joined)="onJoined($event)"
+  (closed)="onClosed()"
+></openvidu-meet>
 ```
 
-This example builds that element in TypeScript instead, because the Web Component reads
-`room-url` the moment it enters the DOM, which happens before an Angular template binding would
-be applied. It also listens for the `joined` and `closed`
-[events](https://openvidu.io/latest/meet/embedded/reference/webcomponent.html#events) and calls
-the `endMeeting()`
-[command](https://openvidu.io/latest/meet/embedded/reference/webcomponent.html#commands).
+The element needs `CUSTOM_ELEMENTS_SCHEMA` in the component, because it is a Web Component
+rather than an Angular one. From there it is ordinary Angular: `(joined)` and `(closed)` listen
+to the element's [events](https://openvidu.io/latest/meet/embedded/reference/webcomponent/#events),
+and **[`frontend/src/app/app.ts`](frontend/src/app/app.ts)** reaches the element through
+`viewChild` to call the `endMeeting()`
+[command](https://openvidu.io/latest/meet/embedded/reference/webcomponent/#commands).
 
 ## Going further
 
-- [Web Component reference](https://openvidu.io/latest/meet/embedded/reference/webcomponent.html) — every attribute, command and event.
-- [Step-by-step guide](https://openvidu.io/latest/meet/embedded/step-by-step-guide.html) — including the iframe and direct-link alternatives.
-- [Webhooks](https://openvidu.io/latest/meet/embedded/reference/webhooks.html) — react to meetings and recordings from your backend.
+- [Web Component reference](https://openvidu.io/latest/meet/embedded/reference/webcomponent/) — every attribute, command and event.
+- [Step-by-step guide](https://openvidu.io/latest/meet/embedded/step-by-step-guide/) — including the iframe and direct-link alternatives.
+- [Webhooks](https://openvidu.io/latest/meet/embedded/reference/webhooks/) — react to meetings and recordings from your backend.

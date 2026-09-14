@@ -1,7 +1,7 @@
 # Level 2 — OpenVidu Angular Components
 
 The same support desk, with the meeting screen built from
-[OpenVidu Angular Components](https://openvidu.io/latest/docs/ui-components/angular-components.html),
+[OpenVidu Angular Components](https://openvidu.io/latest/docs/ui-components/angular-components/),
 the library OpenVidu Meet itself is built with. You get a working meeting out of the box and
 then change any part of it.
 
@@ -55,4 +55,4 @@ button of your own to the default toolbar, and its siblings replace pieces outri
 ## Going further
 
 - [Angular Components tutorials](https://openvidu.io/latest/docs/tutorials/angular-components/) — one per customizable piece: custom toolbar, layout, stream, panels, admin dashboard.
-- [Angular Components reference](https://openvidu.io/latest/docs/ui-components/angular-components.html) — components, directives and CSS variables.
+- [Angular Components reference](https://openvidu.io/latest/docs/ui-components/angular-components/) — components, directives and CSS variables.

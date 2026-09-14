@@ -1,6 +1,22 @@
-:host { display: block; position: relative; }
-video { width: 320px; background: #1d2a33; border-radius: 8px; display: block; }
+:host {
+  display: block;
+  position: relative;
+}
+
+video {
+  display: block;
+  width: 320px;
+  background: #1d2a33;
+  border-radius: 8px;
+}
+
 .label {
-  position: absolute; left: 0.5rem; bottom: 0.75rem; padding: 0.1rem 0.5rem;
-  background: rgba(0, 0, 0, 0.55); color: #fff; border-radius: 4px; font-size: 0.8rem;
+  position: absolute;
+  left: 0.5rem;
+  bottom: 0.75rem;
+  padding: 0.1rem 0.5rem;
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+  border-radius: 4px;
+  font-size: 0.8rem;
 }

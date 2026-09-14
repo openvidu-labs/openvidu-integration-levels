@@ -1,14 +1,23 @@
 <header class="bar">
   <strong>Support desk</strong>
 
-  @if (call(); as meeting) {
+  @if (room(); as current) {
     <span>Open this link in another tab to join as the customer:</span>
-    <a [href]="meeting.speakerUrl" target="_blank">customer link</a>
-    <button (click)="endCall()">End meeting for everyone</button>
+    <a [href]="current.speakerUrl" target="_blank">customer link</a>
+    <button (click)="endMeeting()">End meeting for everyone</button>
   } @else {
-    <button class="primary" (click)="startCall()">Start call</button>
+    <button class="primary" (click)="createRoom()">Start call</button>
   }
 </header>
 
-<!-- The embedded OpenVidu Meet UI goes here. -->
-<div #container class="stage"></div>
+<!-- The whole meeting UI is this one element, bound to the room the backend created. -->
+@if (room(); as current) {
+  <openvidu-meet
+    #meet
+    class="stage"
+    [attr.room-url]="current.moderatorUrl"
+    participant-name="Support agent"
+    (joined)="onJoined($event)"
+    (closed)="onClosed()"
+  ></openvidu-meet>
+}

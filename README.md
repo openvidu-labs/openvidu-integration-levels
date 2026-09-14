@@ -23,7 +23,7 @@ This is the companion repository of the article
 
 ## Start OpenVidu
 
-One deployment serves all three levels. [OpenVidu Local](https://openvidu.io/latest/docs/self-hosting/local.html)
+One deployment serves all three levels. [OpenVidu Local](https://openvidu.io/latest/docs/self-hosting/local/)
 brings up both OpenVidu Meet and the OpenVidu API:
 
 ```bash
@@ -56,7 +56,7 @@ click and how to bring a second participant in.
 ## Which level is which
 
 **[1-meet-embedded](1-meet-embedded/)** — the backend creates a room with the
-[Meet REST API](https://openvidu.io/latest/meet/embedded/reference/rest-api.html) and the page
+[Meet REST API](https://openvidu.io/latest/meet/embedded/reference/rest-api/) and the page
 embeds the returned link with `<openvidu-meet>`. Chat, screen sharing, recording, virtual
 backgrounds and the whole meeting UI come with it.
 

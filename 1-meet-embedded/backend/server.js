@@ -12,7 +12,7 @@ app.use(express.json());
 
 // Creates a room through the OpenVidu Meet REST API and returns its access links.
 // The API key lives here, never in the browser.
-app.post("/meetings", async (req, res) => {
+app.post("/rooms", async (req, res) => {
     const response = await fetch(`${MEET_URL}/api/v1/rooms`, {
         method: "POST",
         headers: { "Content-Type": "application/json", "X-API-KEY": MEET_API_KEY },
