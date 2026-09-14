@@ -1,0 +1,11 @@
+{
+  "name": "meet-embedded-backend",
+  "version": "1.0.0",
+  "description": "Creates OpenVidu Meet rooms through the Meet REST API",
+  "type": "module",
+  "scripts": { "start": "node --env-file-if-exists=.env server.js" },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0"
+  }
+}

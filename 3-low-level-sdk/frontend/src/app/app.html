@@ -1,0 +1,20 @@
+<header class="bar">
+  <strong>Support desk</strong>
+
+  @if (room()) {
+    <button (click)="leave()">Leave</button>
+  } @else {
+    <button class="primary" (click)="join()">Join</button>
+  }
+  <span>Open this page in another tab to join as a second participant.</span>
+</header>
+
+<!-- Nothing here comes from the SDK: this layout is yours to define. -->
+<div class="grid">
+  @if (localTrack(); as track) {
+    <app-track-view [track]="track" label="You" />
+  }
+  @for (track of remoteTracks(); track track.sid) {
+    <app-track-view [track]="track" label="Participant" />
+  }
+</div>

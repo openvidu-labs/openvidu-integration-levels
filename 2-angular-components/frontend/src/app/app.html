@@ -1,0 +1,15 @@
+@if (resolved()) {
+  <header class="bar">Ticket #4821 marked as resolved</header>
+}
+
+<ov-videoconference
+  class="stage"
+  [token]="token()"
+  [livekitUrl]="OPENVIDU_URL"
+  (onTokenRequested)="onTokenRequested($event)"
+>
+  <!-- Your own button, next to the default toolbar controls. -->
+  <div *ovToolbarAdditionalButtons>
+    <button (click)="resolveTicket()">Resolve ticket</button>
+  </div>
+</ov-videoconference>
