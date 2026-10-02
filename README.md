@@ -14,7 +14,7 @@ model the same scenario, a support desk where an agent starts a call and a custo
 you can compare the three by reading the same feature three times.
 
 This is the companion repository of the article
-[3 ways to integrate video conferencing into your app with OpenVidu](https://openvidu.io/blog/).
+[3 ways to integrate video conferencing into your app with OpenVidu](https://openvidu.io/blog/2026/09/22/integrate-video-conferencing-into-your-app/).
 
 ## What you need
 
