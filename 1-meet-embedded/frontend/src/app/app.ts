@@ -7,7 +7,7 @@ const BACKEND_URL = 'http://localhost:6080';
 type MeetRoom = { moderatorUrl: string; speakerUrl: string };
 
 /** An <openvidu-meet> element, with the commands this page uses. */
-type MeetElement = HTMLElement & { endMeeting: () => void };
+type MeetElement = HTMLElement & { meetingEnd: () => void };
 
 @Component({
   selector: 'app-root',
@@ -44,6 +44,6 @@ export class App {
 
   /** Commands are methods on the element. */
   protected endMeeting() {
-    this.meet()?.nativeElement.endMeeting();
+    this.meet()?.nativeElement.meetingEnd();
   }
 }

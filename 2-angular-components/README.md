@@ -8,7 +8,7 @@ then change any part of it.
 Angular 20 frontend, Node.js backend. See the [root README](../README.md) for how to start
 OpenVidu Local first.
 
-> `openvidu-components-angular` 3.8.0 supports Angular 17 to 20, so this example stays on
+> `openvidu-components-angular` 3.9.0 supports Angular 17 to 20, so this example stays on
 > Angular 20 while the other two are on the latest.
 
 ## Run it
