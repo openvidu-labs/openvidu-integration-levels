@@ -17,7 +17,7 @@
     class="stage"
     [attr.room-url]="current.moderatorUrl"
     participant-name="Support agent"
-    (joined)="onJoined($event)"
-    (closed)="onClosed()"
+    (meetingJoined)="onJoined($event)"
+    (embeddedCloseRequested)="onClosed()"
   ></openvidu-meet>
 }

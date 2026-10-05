@@ -27,7 +27,7 @@ One deployment serves all three levels. [OpenVidu Local](https://openvidu.io/lat
 brings up both OpenVidu Meet and the OpenVidu API:
 
 ```bash
-git clone https://github.com/OpenVidu/openvidu-local-deployment -b 3.8.0
+git clone https://github.com/OpenVidu/openvidu-local-deployment -b 3.9.0
 cd openvidu-local-deployment/community
 ./configure_lan_private_ip_linux.sh   # configure_lan_private_ip_macos.sh | .bat on Windows
 docker compose up

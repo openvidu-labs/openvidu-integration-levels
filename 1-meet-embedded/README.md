@@ -48,16 +48,17 @@ HTML this is one tag; in Angular it is the same tag with bindings:
   #meet
   [attr.room-url]="current.moderatorUrl"
   participant-name="Support agent"
-  (joined)="onJoined($event)"
-  (closed)="onClosed()"
+  (meetingJoined)="onJoined($event)"
+  (embeddedCloseRequested)="onClosed()"
 ></openvidu-meet>
 ```
 
 The element needs `CUSTOM_ELEMENTS_SCHEMA` in the component, because it is a Web Component
-rather than an Angular one. From there it is ordinary Angular: `(joined)` and `(closed)` listen
-to the element's [events](https://openvidu.io/latest/meet/embedded/reference/webcomponent/#events),
-and **[`frontend/src/app/app.ts`](frontend/src/app/app.ts)** reaches the element through
-`viewChild` to call the `endMeeting()`
+rather than an Angular one. From there it is ordinary Angular: `(meetingJoined)` and
+`(embeddedCloseRequested)` listen to the element's
+[events](https://openvidu.io/latest/meet/embedded/reference/webcomponent/#events), and
+**[`frontend/src/app/app.ts`](frontend/src/app/app.ts)** reaches the element through
+`viewChild` to call the `meetingEnd()`
 [command](https://openvidu.io/latest/meet/embedded/reference/webcomponent/#commands).
 
 ## Going further
