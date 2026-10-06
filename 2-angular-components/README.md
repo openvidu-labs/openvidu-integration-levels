@@ -28,7 +28,7 @@ must do is sign an access token that says who the participant is and which room 
 
 ```javascript
 const at = new AccessToken(OPENVIDU_API_KEY, OPENVIDU_API_SECRET, { identity: participantName });
-at.addGrant({ roomJoin: true, room: roomName });
+at.addGrant({ roomJoin: true, room: roomName, canUpdateOwnMetadata: true });
 ```
 
 **[`frontend/src/app/app.config.ts`](frontend/src/app/app.config.ts)** registers the library,
@@ -41,7 +41,7 @@ and **[`frontend/src/app/app.html`](frontend/src/app/app.html)** is the whole me
   (onTokenRequested)="onTokenRequested($event)"
 >
   <div *ovToolbarAdditionalButtons>
-    <button (click)="resolveTicket()">Resolve ticket</button>
+    <button class="app-button" (click)="resolveTicket()">Resolve ticket</button>
   </div>
 </ov-videoconference>
 ```

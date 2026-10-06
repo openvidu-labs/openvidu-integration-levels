@@ -1,3 +1,33 @@
+/*
+ * Theme variables for openvidu-components-angular. With its default "classic"
+ * theme the library sets none of them, so the app has to. These are the defaults
+ * documented in the openvidu-components-angular README.
+ */
+:root {
+  /* Basic colors */
+  --ov-background-color: #303030;
+  --ov-surface-color: #ffffff;
+
+  /* Text colors */
+  --ov-text-primary-color: #ffffff;
+  --ov-text-surface-color: #1d1d1d;
+
+  /* Action colors */
+  --ov-primary-action-color: #273235;
+  --ov-secondary-action-color: #f1f1f1;
+  --ov-accent-action-color: #0089ab;
+
+  /* Status colors */
+  --ov-error-color: #eb5144;
+  --ov-warn-color: #ffba53;
+
+  /* Radius */
+  --ov-toolbar-buttons-radius: 50%;
+  --ov-leave-button-radius: 10px;
+  --ov-video-radius: 5px;
+  --ov-surface-radius: 5px;
+}
+
 html,
 body {
   height: 100%;
@@ -9,7 +39,7 @@ body {
   color: #1d2a33;
 }
 
-button {
+.app-button {
   font: inherit;
   padding: 0.4rem 0.9rem;
   border: 1px solid #c4ced6;
@@ -18,16 +48,16 @@ button {
   cursor: pointer;
 }
 
-button:hover {
+.app-button:hover {
   background: #f4f7f9;
 }
 
-button.primary {
+.app-button.primary {
   background: #0088aa;
   border-color: #0088aa;
   color: #fff;
 }
 
-button.primary:hover {
+.app-button.primary:hover {
   background: #007394;
 }
