@@ -17,7 +17,9 @@ app.post("/token", async (req, res) => {
     const { roomName, participantName } = req.body;
 
     const at = new AccessToken(OPENVIDU_API_KEY, OPENVIDU_API_SECRET, { identity: participantName });
-    at.addGrant({ roomJoin: true, room: roomName });
+    // The components set the participant's display name after joining, which
+    // needs canUpdateOwnMetadata. Publishing and subscribing are allowed by default.
+    at.addGrant({ roomJoin: true, room: roomName, canUpdateOwnMetadata: true });
 
     res.json({ token: await at.toJwt() });
 });

@@ -32,7 +32,7 @@ export class App {
       this.remoteTracks.update((tracks) => tracks.filter((t) => t.sid !== track.sid));
     });
 
-    const token = await this.getToken('support-desk', 'agent-' + Math.floor(Math.random() * 1000));
+    const token = await this.getToken('support-desk', 'agent-' + crypto.randomUUID().slice(0, 8));
 
     await room.connect(OPENVIDU_URL, token);
     await room.localParticipant.enableCameraAndMicrophone();
